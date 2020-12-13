@@ -44,13 +44,10 @@ namespace Problem
                 else if (command == "GetDomain")
                 {
                     int count = int.Parse(cmdArgs[1]);
-                    if (count > -1 && count < email.Length)
-                    {
-
+                    
                     string last = email.Substring(email.Length - count, count);
                     Console.WriteLine(last);
-                    }
-                    else { Console.WriteLine(email); }
+                   
                 }
 
                 else if(command == "GetUsername")
@@ -59,9 +56,13 @@ namespace Problem
                     {
                         Console.WriteLine("The email {email} doesn't contain the @ symbol.");
                     }
+                    else
+                    {
+
                     int ind = email.IndexOf('@');
                     string newEmail = email.Substring(0, ind);
                     Console.WriteLine(newEmail);
+                    }
                 }
                 else if(command == "Replace")
                 {
